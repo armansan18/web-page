@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Armanda Sanjaya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              greenMain: '#27ae60',
+              blueMain: '#2980b9',
+              blueSoft: '#3498db',
+              darkBg: '#1a1f25',
+              darkCard: '#252b33',
+            },
+          },
+        },
+      };
+    </script>
+    <script>
+      function toggleDark() {
+        document.documentElement.classList.toggle('dark');
+        localStorage.setItem(
+          'theme',
+          document.documentElement.classList.contains('dark') ? 'dark' : 'light'
+        );
+      }
+      document.addEventListener('DOMContentLoaded', () => {
+        if (localStorage.getItem('theme') === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      });
+    </script>
+  </head>
+  <body
+    class="bg-white text-slate-900 dark:bg-darkBg dark:text-white transition duration-300"
+  >
+    <!-- NAVBAR -->
+    <nav class="bg-blueMain dark:bg-darkCard text-white shadow-md">
+      <div
+        class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="text-xl font-bold tracking-wide">MyBrand</div>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-greenMain">Home</a>
+          <a href="#blog" class="hover:text-greenMain">Blog</a>
+          <a href="#" class="hover:text-greenMain">Contact</a>
+        </div>
+        <button
+          onclick="toggleDark()"
+          class="ml-4 bg-white/20 dark:hover:bg-greenMain hover:bg-greenMain px-4 py-2 rounded-lg"
+        >
+          <img
+            src="src/icons8-dark-mode-64.png"
+            class="w-5 h-5"
+            alt="Dark Mode"
+          />
+        </button>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <!-- <section
+      class="bg-gradient-to-r from-greenMain to-blueSoft dark:from-greenMain dark:to-blueMain text-white text-center py-24 px-6"
+    >
+      <h1 class="text-4xl md:text-5xl font-bold mb-3">Armanda Sanjaya</h1>
+      <p class="text-lg opacity-90">
+        NetSuite Developer | Oracle Developer | Learner
+      </p>
+    </section> -->
+
+    <section class="dark:text-blueSoft py-20 bg-cover bg-center bg-no-repeat">
+      <div
+        class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-10"
+      >
+        <!-- Foto -->
+        <img
+          src="src/armando.png"
+          class="w-40 h-40 md:w-56 md:h-56 rounded-full object-cover shadow-lg ring-4 ring-white/30"
+          alt="Profile"
+        />
+
+        <!-- Text -->
+        <div class="text-center md:text-left">
+          <h1 class="text-4xl md:text-5xl font-bold mb-3">Armanda Sanjaya</h1>
+          <p class="text-lg opacity-90">
+            NetSuite Developer | Oracle Developer | Learner
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-6 py-16">
+      <h2 class="text-3xl font-bold mb-10 text-blue-700 dark:text-blue-300">
+        Pengalaman Kerja
+      </h2>
+
+      <div
+        class="relative border-l-4 border-blue-500 dark:border-blue-300 pl-6 space-y-10"
+      >
+        <!-- ITEM 1 -->
+        <div class="relative">
+          <span
+            class="absolute -left-3 top-1 w-6 h-6 rounded-full bg-blue-500 dark:bg-blue-300"
+          ></span>
+
+          <div class="bg-white dark:bg-slate-800 shadow rounded-xl p-6">
+            <div class="flex flex-wrap justify-between mb-2">
+              <h3 class="text-xl font-bold">Netsuite Developer</h3>
+              <span class="text-sm text-slate-500 dark:text-slate-300"
+                >Des 2024 — Present</span
+              >
+            </div>
+
+            <p class="font-semibold text-green-600 dark:text-green-300 mb-2">
+              Logiframe
+            </p>
+
+            <p class="font-semibold text-sm text-black-150 dark:text-white-300">
+              Mengembangkan solusi ERP berbasis Oracle NetSuite, termasuk
+              automasi proses bisnis, integrasi, dan optimasi laporan. Berfokus
+              pada SuiteScript 2.x, SavedSearch, SuiteQL, dan Advanced PDF/HTML.
+            </p>
+
+            <ul
+              class="list-disc pl-6 space-y-2 mt-3 text-slate-700 dark:text-slate-300"
+            >
+              <li>
+                Mempelajari Bisnis Flow untuk memudahkan merancang dan
+                implementasi solusi teknis di Netsuite ERP
+              </li>
+              <li>
+                Bekerja sama dengan tim fungsional dan Project Manager untuk
+                mengumpulkan kebutuhan dan menerjemahkannya ke dalam solusi
+                teknis yang efektif baik untuk client maupun calon client
+              </li>
+              <li>
+                Membangun automation dengan SuiteScript (UserEvent Script ,
+                Client Script , Map/Reduce Script , Scheduled Script, Suitelet
+                Script , Restlet Script) untuk mengurangi pekerjaan manual
+              </li>
+              <li>
+                Menggunakan Tools seperti SavedSearch ataupun SuiteQL untuk
+                berinteraksi dengan database Netsuite
+              </li>
+              <li>
+                Membuat Printout dari transaksi di Netsuite menggunakan Advanced
+                PDF/HTML Template dengan FreeMarker Syntax
+              </li>
+              <li>
+                Melakukan troubleshooting & patching pada script eksisting untuk
+                meningkatkan kestabilan sistem.
+              </li>
+            </ul>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span
+                class="px-3 py-1 rounded-full text-xs bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200"
+                >SuiteScript</span
+              >
+              <span
+                class="px-3 py-1 text-sm bg-blue-500/20 text-blue-300 rounded-full"
+              >
+                SuiteScript
+              </span>
+
+              <span
+                class="px-3 py-1 rounded-full text-xs bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-200"
+                >JavaScript</span
+              >
+              <span
+                class="px-3 py-1 rounded-full text-xs bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-white"
+                >HTML</span
+              >
+              <span
+                class="px-3 py-1 rounded-full text-xs bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-white"
+                >CSS</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- ITEM 2 -->
+        <div class="relative">
+          <span
+            class="absolute -left-3 top-1 w-6 h-6 rounded-full bg-blue-500 dark:bg-blue-300"
+          ></span>
+
+          <div class="bg-white dark:bg-slate-800 shadow rounded-xl p-6">
+            <div class="flex flex-wrap justify-between mb-2">
+              <h3 class="text-xl font-bold">Oracle Developer</h3>
+              <span class="text-sm text-slate-500 dark:text-slate-300"
+                >Jun 2022 — Nov 2024</span
+              >
+            </div>
+
+            <p class="font-semibold text-green-600 dark:text-green-300">
+              PT Visionet Data Internasional
+            </p>
+
+            <p class="font-semibold text-sm text-black-150 dark:text-white-300">
+              Mengembangkan Solusi teknis di Oracle Retail Merchandising System,
+              termasuk automasi proses bisnis, integrasi, dan optimasi laporan.
+              Berfokus pada Oracle Database , Oracle PL/SQL dan Automic
+              Scheduler.
+            </p>
+
+            <ul
+              class="list-disc pl-6 space-y-2 mt-3 text-slate-700 dark:text-slate-300"
+            >
+              <li>
+                Membuat atau mengembangkan database object seperti function ,
+                procedure , package , trigger , view, table , column dan lainnya
+              </li>
+              <li>Mengotomasi menggunakan Automic Scheduler</li>
+              <li>
+                Menghandle tiket request dan incident dari user seperti mencari
+                penyebab error dan memberikan solusi ,permintaan penarikan data
+                dan adhoc job
+              </li>
+            </ul>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span
+                class="px-3 py-1 rounded-full text-xs bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-200"
+                >PL/SQL</span
+              >
+              <span
+                class="px-3 py-1 rounded-full text-xs bg-sky-100 text-sky-700 dark:bg-sky-900 dark:text-sky-200"
+                >Automic Scheduler</span
+              >
+              <span
+                class="px-3 py-1 rounded-full text-xs bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-200"
+                >SQL</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES GRID -->
+    <section id="blog" class="max-w-6xl mx-auto px-6 py-16">
+      <h2 class="text-2xl font-bold mb-8">Blog</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          class="bg-white dark:bg-darkCard shadow-md rounded-xl p-6 border-l-4 border-greenMain dark:border-blueSoft"
+        >
+          <h3 class="text-xl font-bold mb-2">Fast Development</h3>
+          <p class="opacity-80">Build UI super cepat.</p>
+        </div>
+        <div
+          class="bg-white dark:bg-darkCard shadow-md rounded-xl p-6 border-l-4 border-greenMain dark:border-blueSoft"
+        >
+          <h3 class="text-xl font-bold mb-2">Flexible Layout</h3>
+          <p class="opacity-80">Cocok untuk landing, blog, dashboard.</p>
+        </div>
+        <div
+          class="bg-white dark:bg-darkCard shadow-md rounded-xl p-6 border-l-4 border-greenMain dark:border-blueSoft"
+        >
+          <h3 class="text-xl font-bold mb-2">Dark Mode Ready</h3>
+          <p class="opacity-80">Tema otomatis menyesuaikan warna.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-darkCard text-white text-center py-6 mt-12">
+      © 2025 Armanda Sanjaya
+    </footer>
+  </body>
+</html>
