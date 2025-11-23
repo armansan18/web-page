@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Armanda Sanjaya</title>
+    <link rel="icon" type="image/png" href="src/sign.png" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -34,32 +35,68 @@
           document.documentElement.classList.add('dark');
         }
       });
+
+      function toggleMenu() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('hidden');
+      }
     </script>
   </head>
   <body
-    class="bg-white text-slate-900 dark:bg-darkBg dark:text-white transition duration-300"
+    class="bg-stone-100 text-slate-900 dark:bg-darkBg dark:text-white transition duration-300"
   >
     <!-- NAVBAR -->
     <nav class="bg-blueMain dark:bg-darkCard text-white shadow-md">
       <div
         class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center"
       >
-        <div class="text-xl font-bold tracking-wide">MyBrand</div>
-        <div class="flex gap-6">
+        <div class="text-sm leading-tight">
+          <span class="block font-bold">Armanda</span>
+          <span class="block text-xs opacity-90">Sanjaya</span>
+        </div>
+        <div class="hidden md:flex gap-6">
           <a href="#" class="hover:text-greenMain">Home</a>
           <a href="#blog" class="hover:text-greenMain">Blog</a>
           <a href="#" class="hover:text-greenMain">Contact</a>
         </div>
-        <button
-          onclick="toggleDark()"
-          class="ml-4 bg-white/20 dark:hover:bg-greenMain hover:bg-greenMain px-4 py-2 rounded-lg"
-        >
-          <img
-            src="src/icons8-dark-mode-64.png"
-            class="w-5 h-5"
-            alt="Dark Mode"
-          />
-        </button>
+
+        <div>
+          <button
+            onclick="toggleDark()"
+            class="ml-4 bg-white/20 dark:hover:bg-greenMain hover:bg-greenMain px-4 py-2 rounded-lg"
+          >
+            <img
+              src="src/icons8-dark-mode-64.png"
+              class="w-5 h-5"
+              alt="Dark Mode"
+            />
+          </button>
+
+          <button class="md:hidden focus:outline-none" onClick="toggleMenu()">
+            <svg
+              id="hamburgerIcon"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-7 h-7"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- MOBILE MENU -->
+      <div id="mobileMenu" class="md:hidden hidden px-6 pb-4 space-y-2 text-sm">
+        <a href="#" class="block hover:text-greenMain">Home</a>
+        <a href="#blog" class="block hover:text-greenMain">Blog</a>
+        <a href="#" class="block hover:text-greenMain">Contact</a>
       </div>
     </nav>
 
@@ -89,6 +126,19 @@
           <h1 class="text-4xl md:text-5xl font-bold mb-3">Armanda Sanjaya</h1>
           <p class="text-lg opacity-90">
             NetSuite Developer | Oracle Developer | Learner
+          </p>
+          <p>
+            <a
+              href="https://www.linkedin.com/in/armanda-sanjaya-33aa2019b/"
+              target="_blank"
+              class="ml-4 p-2 rounded-lg hover:bg-white/20 transition"
+            >
+              <img
+                src="src/icons8-linkedin-48.png"
+                class="w-6 h-6"
+                alt="LinkedIn"
+              />
+            </a>
           </p>
         </div>
       </div>
@@ -159,10 +209,6 @@
 
             <!-- Tech Badges -->
             <div class="flex flex-wrap gap-2 mt-4">
-              <span
-                class="px-3 py-1 rounded-full text-xs bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200"
-                >SuiteScript</span
-              >
               <span
                 class="px-3 py-1 text-sm bg-blue-500/20 text-blue-300 rounded-full"
               >
